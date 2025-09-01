@@ -27,8 +27,8 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  // Parse destination URL
-  const destination = getQuery<{ destination?: string }>(event).destination;
+  // Parse febbox-proxy URL
+  const destination = getQuery<{ 'febbox-proxy'?: string }>(event)['febbox-proxy'];
   if (!destination) {
     return await sendJson({
       event,
